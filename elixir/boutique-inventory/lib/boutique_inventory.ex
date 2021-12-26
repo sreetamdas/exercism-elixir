@@ -1,7 +1,7 @@
 defmodule BoutiqueInventory do
   def sort_by_price(inventory) do
     inventory
-    |> Enum.sort(&(&1.price <= &2.price))
+    |> Enum.sort_by(fn x -> x.price end)
   end
 
   def with_missing_price(inventory) do
@@ -20,8 +20,7 @@ defmodule BoutiqueInventory do
 
   def total_quantity(item) do
     item
-    |> Map.get(:quantity_by_size, %{})
-    |> Map.values()
-    |> Enum.sum()
+    |> Map.get(:quantity_by_size)
+    |> Enum.reduce(0, fn {_, quantity}, sum -> sum + quantity end)
   end
 end
