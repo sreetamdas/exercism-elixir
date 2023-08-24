@@ -1,3 +1,9 @@
 {
-	"editor.tabSize": 2
+	"editor.tabSize": 2,
+	"elixirLS.projectDir": "./elixir",
+	"workbench.colorCustomizations": {
+		"statusBar.background": "#4e2a8e",
+		"statusBar.foreground": "#FFF",
+		"statusBarItem.hoverBackground": "#7938ea"
+	}
 }
