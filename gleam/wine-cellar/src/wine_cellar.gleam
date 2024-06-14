@@ -1,14 +1,24 @@
-pub fn wines_of_color(wines: List(Wine), color: Color) -> List(Wine) {
-  todo
+import gleam/list
+
+pub fn wines_of_color(wines: List(Wine), color color: Color) -> List(Wine) {
+  list.filter(wines, fn(wine: Wine) { wine.color == color })
 }
 
-pub fn wines_from_country(wines: List(Wine), country: String) -> List(Wine) {
-  todo
+pub fn wines_from_country(
+  wines: List(Wine),
+  country country: String,
+) -> List(Wine) {
+  list.filter(wines, fn(wine: Wine) { wine.country == country })
 }
 
-// Please define the required labelled arguments for this function
-pub fn filter(wines: List(Wine)) -> List(Wine) {
-  todo
+pub fn filter(
+  wines: List(Wine),
+  color color: Color,
+  country country: String,
+) -> List(Wine) {
+  wines
+  |> wines_of_color(color)
+  |> wines_from_country(country)
 }
 
 pub type Wine {
